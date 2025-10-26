@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Chatbot TypeScript
+
+A modern, responsive AI chatbot built with Next.js 16, TypeScript, and OpenAI GPT-3.5.
+
+## Features
+
+- 💬 Real-time chat interface with OpenAI GPT-3.5
+- 🎨 Beautiful, responsive UI with Tailwind CSS
+- ⚡ Built with Next.js 16 App Router
+- 🔒 Type-safe with TypeScript
+- 🎯 Clean component architecture
+- 📱 Mobile-friendly design
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ installed
+- An OpenAI API key (get one at [OpenAI Platform](https://platform.openai.com/api-keys))
+
+### Installation
+
+1. Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+2. Create a `.env.local` file in the root directory:
+
+```bash
+cp .env.local.example .env.local
+```
+
+3. Add your OpenAI API key to `.env.local`:
+
+```env
+OPENAI_API_KEY=your_actual_api_key_here
+```
+
+### Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the chatbot.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── chat/
+│   │       └── route.ts          # OpenAI API endpoint
+│   ├── globals.css               # Global styles
+│   ├── layout.tsx                # Root layout
+│   └── page.tsx                  # Home page
+├── components/
+│   ├── Chat.tsx                  # Main chat component
+│   ├── ChatInput.tsx             # Message input component
+│   ├── MessageBubble.tsx         # Individual message display
+│   └── MessageList.tsx           # Message list container
+├── hooks/
+│   └── useChat.ts                # Chat state management hook
+└── types/
+    └── chat.ts                   # TypeScript type definitions
+```
 
-## Learn More
+## Technologies Used
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js 16** - React framework with App Router
+- **TypeScript** - Type safety
+- **OpenAI API** - GPT-3.5 Turbo for AI responses
+- **Tailwind CSS** - Styling
+- **nanoid** - Unique ID generation
+- **React 19** - UI library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## How It Works
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. User types a message in the chat input
+2. Message is sent to the Next.js API route (`/api/chat`)
+3. API route forwards the conversation to OpenAI's GPT-3.5 API
+4. AI response is returned and displayed in the chat interface
+5. Conversation history is maintained in React state
 
-## Deploy on Vercel
+## Customization
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Change AI Model
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit `src/app/api/chat/route.ts` and modify the model parameter:
+
+```typescript
+const completion = await openai.chat.completions.create({
+  model: 'gpt-4', // Change to gpt-4 or other models
+  // ...
+});
+```
+
+### Adjust AI Behavior
+
+Modify the `temperature` and `max_tokens` parameters in the API route for different response styles.
+
+## Building for Production
+
+```bash
+npm run build
+npm start
+```
+
+## License
+
+MIT
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
