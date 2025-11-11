@@ -29,7 +29,7 @@ export function ChatInput({ onSendMessage, isLoading }: ChatInputProps) {
         onChange={(e) => setInput(e.target.value)}
         onKeyPress={handleKeyPress}
         placeholder='Type your message...'
-        className='flex-1 resize-none rounded-lg border border-gray-300 p-3 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500'
+        className='flex-1 resize-none rounded-lg border border-gray-300 p-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500'
         rows={1}
         disabled={isLoading}
       />
