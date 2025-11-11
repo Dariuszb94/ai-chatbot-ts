@@ -107,6 +107,7 @@ Modify the `temperature` and `max_tokens` parameters in the API route for differ
 ## Building for Production
 
 ### Local Build
+
 ```bash
 npm run build
 npm start
@@ -119,11 +120,13 @@ This project is configured for automatic deployment to GitHub Pages.
 **Setup Steps:**
 
 1. **Enable GitHub Pages in your repository:**
+
    - Go to your repository on GitHub
    - Navigate to Settings → Pages
    - Under "Build and deployment", select "GitHub Actions" as the source
 
 2. **Add OpenAI API Key as a secret:**
+
    - Go to Settings → Secrets and variables → Actions
    - Click "New repository secret"
    - Name: `OPENAI_API_KEY`
@@ -131,6 +134,7 @@ This project is configured for automatic deployment to GitHub Pages.
    - Click "Add secret"
 
 3. **Deploy:**
+
    ```bash
    git add .
    git commit -m "Configure GitHub Pages deployment"
@@ -142,6 +146,7 @@ This project is configured for automatic deployment to GitHub Pages.
    - Check the Actions tab to monitor deployment progress
 
 **Note:** Since GitHub Pages hosts static files, the API routes will only work in development. For production deployment with API functionality, consider:
+
 - Vercel (recommended for Next.js)
 - Netlify
 - AWS Amplify

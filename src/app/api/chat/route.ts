@@ -25,10 +25,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Convert our message format to OpenAI format
-    const formattedMessages: ChatCompletionMessageParam[] = messages.map((msg: { role: 'user' | 'assistant' | 'system'; content: string }) => ({
-      role: msg.role,
-      content: msg.content,
-    }));
+    const formattedMessages: ChatCompletionMessageParam[] = messages.map(
+      (msg: { role: 'user' | 'assistant' | 'system'; content: string }) => ({
+        role: msg.role,
+        content: msg.content,
+      })
+    );
 
     const completion = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
@@ -49,20 +51,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       message: {
         role: assistantMessage.role,
-        content: assistantMessage.content || 'Sorry, I could not generate a response.',
-      }
+        content:
+          assistantMessage.content || 'Sorry, I could not generate a response.',
+      },
     });
-
   } catch (error) {
     console.error('OpenAI API error:', error);
-    
+
     if (error instanceof Error) {
       return NextResponse.json(
         { error: `API Error: ${error.message}` },
         { status: 500 }
       );
     }
-    
+
     return NextResponse.json(
       { error: 'An unexpected error occurred' },
       { status: 500 }

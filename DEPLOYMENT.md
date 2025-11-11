@@ -7,6 +7,7 @@ This means the `/api/chat` endpoint won't work when deployed to GitHub Pages, as
 ## Recommended Deployment Options for Full Functionality
 
 ### 1. **Vercel (Recommended)**
+
 ```bash
 # Install Vercel CLI
 npm i -g vercel
@@ -14,12 +15,14 @@ npm i -g vercel
 # Deploy
 vercel
 ```
+
 - Free tier available
 - Perfect for Next.js apps
 - Supports API routes
 - Automatic deployments from GitHub
 
 ### 2. **Netlify**
+
 ```bash
 # Install Netlify CLI
 npm i -g netlify-cli
@@ -27,17 +30,20 @@ npm i -g netlify-cli
 # Deploy
 netlify deploy --prod
 ```
+
 - Free tier available
 - Supports serverless functions
 - Easy GitHub integration
 
 ### 3. **Railway**
+
 - Connect your GitHub repository
 - Automatic deployments
 - Built-in environment variable management
 - Free tier with $5 credit/month
 
 ### 4. **Render**
+
 - Free tier for web services
 - Automatic GitHub deployments
 - Environment variable support

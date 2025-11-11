@@ -6,7 +6,7 @@ interface MessageBubbleProps {
 
 export function MessageBubble({ message }: MessageBubbleProps) {
   const isUser = message.role === 'user';
-  
+
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
       <div
@@ -16,12 +16,14 @@ export function MessageBubble({ message }: MessageBubbleProps) {
             : 'bg-gray-200 text-gray-800 rounded-bl-none'
         }`}
       >
-        <p className="text-sm leading-relaxed whitespace-pre-wrap">
+        <p className='text-sm leading-relaxed whitespace-pre-wrap'>
           {message.content}
         </p>
-        <p className={`text-xs mt-1 ${
-          isUser ? 'text-blue-100' : 'text-gray-500'
-        }`}>
+        <p
+          className={`text-xs mt-1 ${
+            isUser ? 'text-blue-100' : 'text-gray-500'
+          }`}
+        >
           {message.timestamp.toLocaleTimeString()}
         </p>
       </div>
