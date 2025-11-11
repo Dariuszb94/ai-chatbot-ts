@@ -31,9 +31,6 @@ export function Chat() {
             <h1 className='text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent'>
               AI Chatbot
             </h1>
-            <p className='text-xs text-gray-500 font-medium'>
-              Powered by OpenAI GPT-3.5
-            </p>
           </div>
         </div>
         <button
