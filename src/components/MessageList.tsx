@@ -45,15 +45,18 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
               Start a conversation by typing a message below. I&apos;m here to
               help with any questions you have!
             </p>
-            <div className='mt-8 grid grid-cols-1 md:grid-cols-3 gap-3 w-full max-w-2xl'>
-              <div className='bg-white/60 backdrop-blur p-4 rounded-xl border border-gray-200 shadow-sm'>
-                <p className='text-sm text-gray-600'>💡 Ask questions</p>
+            <div className='mt-8 flex flex-wrap justify-center gap-4 w-full max-w-2xl text-gray-400'>
+              <div className='flex items-center gap-2'>
+                <span className='text-lg'>💡</span>
+                <span className='text-sm'>Ask questions</span>
               </div>
-              <div className='bg-white/60 backdrop-blur p-4 rounded-xl border border-gray-200 shadow-sm'>
-                <p className='text-sm text-gray-600'>✨ Get creative ideas</p>
+              <div className='flex items-center gap-2'>
+                <span className='text-lg'>✨</span>
+                <span className='text-sm'>Get creative ideas</span>
               </div>
-              <div className='bg-white/60 backdrop-blur p-4 rounded-xl border border-gray-200 shadow-sm'>
-                <p className='text-sm text-gray-600'>🚀 Solve problems</p>
+              <div className='flex items-center gap-2'>
+                <span className='text-lg'>🚀</span>
+                <span className='text-sm'>Solve problems</span>
               </div>
             </div>
           </div>
