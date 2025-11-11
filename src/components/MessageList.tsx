@@ -45,7 +45,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
               Start a conversation by typing a message below. I&apos;m here to
               help with any questions you have!
             </p>
-            <div className='mt-8 flex flex-wrap justify-center gap-4 w-full max-w-2xl text-gray-400'>
+            <div className='mt-8 hidden md:flex flex-wrap justify-center gap-4 w-full max-w-2xl text-gray-400'>
               <div className='flex items-center gap-2'>
                 <span className='text-lg'>💡</span>
                 <span className='text-sm'>Ask questions</span>
